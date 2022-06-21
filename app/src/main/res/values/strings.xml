@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">WB5.2</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="heroes_label">SuperHeroes</string>
+    <string name="mock_hero_name">AquaMan</string>
+    <string name="error_not_found">Hero\'s not found</string>
+    <string name="error_io_exception">IO exception</string>
+    <string name="stats_label">Stats</string>
+    <string name="attributes_label">Attributes</string>
+    <string name="attack_label">Attack</string>
+    <string name="defence_label">Defence</string>
+    <string name="mobility_label">Mobility</string>
+    <string name="appearance">Appearance</string>
+    <string name="hero_name">Hero</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="strength">Strength</string>
+    <string name="agility">Agility</string>
+    <string name="max_min_attack">Max and min attack</string>
+    <string name="attack_rate">Attack rate</string>
+    <string name="attack_range">Attack range</string>
+    <string name="armor">Armor</string>
+    <string name="magic_resistant">Magic resistant</string>
+    <string name="speed">Speed</string>
+    <string name="publisher_variant">Publisher: %s</string>
+    <string name="birth_place_variant">Birth Place: %s</string>
+    <string name="race_variant">Race: %s</string>
+    <string name="height_variant">Height: %s</string>
+    <string name="weight_variant">Weight: %s</string>
+    <string name="intelligence_variant">Intelligence: %s</string>
+    <string name="strength_variant">Strength: %s</string>
+    <string name="speed_variant">Speed: %s</string>
+    <string name="durability_variant">Durability: %s</string>
+    <string name="power_variant">Power: %s</string>
+
+
+</resources>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/mock_hero_img" />
+
+        <TextView
+            android:id="@+id/hero_name"
+            android:layout_width="0dp"
+            android:textColor="?attr/colorPrimary"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/mock_hero_name"
+            android:textAppearance="@style/Theme.WB51.HeadlineMedium.TextAppearance"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/banner" />
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Theme.WB51.HeadlineSmall.TextAppearance"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            android:layout_marginEnd="@dimen/margin_huge"
+            app:layout_constraintTop_toBottomOf="@id/hero_name"
+            app:layout_constraintEnd_toStartOf="@id/tv_appearance"
+            tools:text="Ivan Ivanov" />
+
+
+        <TextView
+            android:id="@+id/tv_appearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:text="@string/appearance"
+            android:textAppearance="@style/Theme.WB51.HeadlineSmall.TextAppearance"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_full_name"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline" />
+
+        <TextView
+            android:id="@+id/tv_publisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            android:paddingVertical="1dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_appearance"
+            app:layout_constraintTop_toBottomOf="@id/tv_appearance"
+            android:text="@string/publisher_variant" />
+
+        <TextView
+            android:id="@+id/tv_place_of_birth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingVertical="1dp"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            android:textAlignment="center"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/tv_publisher"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_appearance"
+            app:layout_constraintTop_toBottomOf="@id/tv_publisher"
+            android:text="@string/birth_place_variant" />
+
+        <TextView
+            android:id="@+id/tv_race"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingVertical="1dp"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_appearance"
+            app:layout_constraintTop_toBottomOf="@id/tv_place_of_birth"
+            tools:text="@string/race_variant" />
+
+        <TextView
+            android:id="@+id/tv_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingVertical="1dp"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_appearance"
+            app:layout_constraintTop_toBottomOf="@id/tv_race"
+            tools:text="@string/height_variant" />
+
+        <TextView
+            android:id="@+id/tv_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingVertical="1dp"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_appearance"
+            app:layout_constraintTop_toBottomOf="@id/tv_height"
+            tools:text="@string/weight_variant" />
+
+        <TextView
+            android:id="@+id/tv_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/stats_label"
+            android:textAppearance="@style/Theme.WB51.HeadlineMedium.TextAppearance"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_weight" />
+
+        <TextView
+            android:id="@+id/tv_attributes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/attributes_label"
+            android:textAppearance="@style/Theme.WB51.HeadlineSmall.TextAppearance"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_stats" />
+
+
+        <TextView
+            android:id="@+id/tv_intelligence_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_nano"
+            android:drawablePadding="@dimen/margin_nano"
+            android:contentDescription="@string/intelligence"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            app:drawableLeftCompat="@drawable/ic_intelligence"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_attributes"
+            tools:text="@string/intelligence_variant" />
+
+        <TextView
+            android:id="@+id/tv_strength_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_nano"
+            android:drawablePadding="@dimen/margin_nano"
+            android:contentDescription="@string/strength"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            app:drawableLeftCompat="@drawable/ic_strength"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_intelligence_stats"
+            tools:text="@string/strength_variant" />
+
+        <TextView
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_nano"
+            android:drawablePadding="@dimen/margin_small"
+            android:contentDescription="@string/agility"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            app:drawableLeftCompat="@drawable/ic_speed"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_strength_stats"
+            tools:text="@string/speed_variant" />
+
+
+        <TextView
+            android:id="@+id/tv_durability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_nano"
+            android:drawablePadding="@dimen/margin_small"
+            android:contentDescription="@string/agility"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            app:drawableLeftCompat="@drawable/ic_durability"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_speed"
+            tools:text="@string/durability_variant" />
+
+        <TextView
+            android:id="@+id/tv_power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_nano"
+            android:drawablePadding="@dimen/margin_small"
+            android:contentDescription="@string/agility"
+            android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
+            app:drawableLeftCompat="@drawable/ic_sword"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_durability"
+            tools:text="@string/power_variant" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
