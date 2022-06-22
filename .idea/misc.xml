@@ -15,7 +15,11 @@
         <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB52/app/src/main/res/drawable/ic_launcher_background.xml" value="0.168" />
         <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB52/app/src/main/res/layout/fragment_hero_details.xml" value="0.29691211401425177" />
         <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB52/app/src/main/res/layout/item_hero.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB72/app/src/main/res/layout/fragment_heroes_list.xml" value="0.13595553655408293" />
+        <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB72/app/src/main/res/layout/activity_main.xml" value="0.15946985891406584" />
+        <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB72/app/src/main/res/layout/content_main.xml" value="0.15946985891406584" />
+        <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB72/app/src/main/res/layout/fragment_about.xml" value="0.264" />
+        <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB72/app/src/main/res/layout/fragment_hero_details.xml" value="0.15946985891406584" />
+        <entry key="..\:/Users/Cherny/AndroidStudioProjects/WB72/app/src/main/res/layout/fragment_heroes_list.xml" value="0.72" />
       </map>
     </option>
   </component>

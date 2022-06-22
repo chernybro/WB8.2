@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.chernybro.wb52.R
 import com.chernybro.wb52.databinding.FragmentHeroDetailsBinding
-import com.chernybro.wb52.presentation.BaseFragment
-import com.chernybro.wb52.presentation.hero_list_screen.MainActivity
+import com.chernybro.wb52.presentation.navigation.GeneralCiceroneHolder
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class HeroDetailsFragment : Fragment(), BaseFragment {
+class HeroDetailsFragment : Fragment() {
 
     private var _binding: FragmentHeroDetailsBinding? = null
     private val binding get() = _binding!!
@@ -27,6 +27,9 @@ class HeroDetailsFragment : Fragment(), BaseFragment {
 
     private val vm: HeroDetailsViewModel by viewModels()
 
+    @Inject
+    lateinit var generalCiceroneHolder: GeneralCiceroneHolder
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,10 +40,6 @@ class HeroDetailsFragment : Fragment(), BaseFragment {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        (activity as MainActivity).setToolbarTitle(arguments?.getString(KEY_HERO_NAME, getFragmentTitle()) ?: getFragmentTitle())
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -62,15 +61,13 @@ class HeroDetailsFragment : Fragment(), BaseFragment {
                 tvSpeed.text = getString(R.string.speed_variant, hero.speed)
             }
         }
+        (arguments?.getString(KEY_HERO_NAME, getString(R.string.hero_name)) ?: getString(R.string.hero_name)).also { binding.toolbarTitle.text = it }
 
+        binding.toolbar.setNavigationOnClickListener { generalCiceroneHolder.cicerone.router.exit() }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    override fun getFragmentTitle(): String {
-        return getString(R.string.hero_name)
     }
 }

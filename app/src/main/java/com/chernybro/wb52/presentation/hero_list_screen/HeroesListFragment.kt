@@ -6,22 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.chernybro.wb52.R
 import com.chernybro.wb52.databinding.FragmentHeroesListBinding
 import com.chernybro.wb52.domain.models.HeroItem
-import com.chernybro.wb52.presentation.BaseFragment
+import com.chernybro.wb52.presentation.about.AboutFragment
 import com.chernybro.wb52.presentation.hero_details.HeroDetailsFragment
+import com.chernybro.wb52.presentation.navigation.GeneralCiceroneHolder
+import com.github.terrakok.cicerone.androidx.FragmentScreen
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class HeroesListFragment : Fragment(), BaseFragment {
+class HeroesListFragment : Fragment() {
 
     private var _binding: FragmentHeroesListBinding? = null
     private val binding get() = _binding!!
@@ -31,6 +29,9 @@ class HeroesListFragment : Fragment(), BaseFragment {
 
     private val vm: HeroesListViewModel by viewModels()
 
+    @Inject
+    lateinit var generalCiceroneHolder: GeneralCiceroneHolder
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter.attachClickHandler(object :HeroClickHandler {
@@ -38,7 +39,9 @@ class HeroesListFragment : Fragment(), BaseFragment {
                 val bundle = Bundle()
                 bundle.putString(HeroDetailsFragment.KEY_HERO_ID, item.id)
                 bundle.putString(HeroDetailsFragment.KEY_HERO_NAME, item.name)
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+                val fragment = HeroDetailsFragment()
+                fragment.arguments = bundle
+                generalCiceroneHolder.cicerone.router.navigateTo(FragmentScreen{ fragment })
             }
         })
     }
@@ -59,13 +62,11 @@ class HeroesListFragment : Fragment(), BaseFragment {
         }
         swipeRefreshLayout?.setOnRefreshListener { vm.refresh() }
         configureObserving()
-    }
+        binding.info.setOnClickListener {
+            generalCiceroneHolder.cicerone.router.navigateTo(FragmentScreen { AboutFragment() })
+        }
 
-    override fun onStart() {
-        super.onStart()
-        (activity as MainActivity).setToolbarTitle(getFragmentTitle())
     }
-
 
     private fun configureObserving(){
         vm.heroes.observe(viewLifecycleOwner) { heroes ->
@@ -73,12 +74,9 @@ class HeroesListFragment : Fragment(), BaseFragment {
         }
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    override fun getFragmentTitle(): String {
-        return getString(R.string.heroes_label)
     }
 }

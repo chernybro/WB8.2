@@ -34,6 +34,19 @@
     <string name="speed_variant">Speed: %s</string>
     <string name="durability_variant">Durability: %s</string>
     <string name="power_variant">Power: %s</string>
+    <string name="about_label">About</string>
+    <string name="author_info">Author Info</string>
+    <string name="name">Name</string>
+    <string name="anvar_gubaidullin">Anvar Gubaidullin</string>
+    <string name="nickname">Nickname</string>
+    <string name="chernybro">chernybro</string>
+    <string name="project_info">Project Info</string>
+    <string name="date_of_creation">Date of creation</string>
+    <string name="date_of_creation_value">22.06.2022</string>
+    <string name="project_link">Project Link</string>
+    <string name="github_hyperlink"><u>SuperHeroes</u></string>
+    <string name="hero_label">Hero</string>
+    <string name="github_project_link">https://github.com/chernybro/WB8.2</string>
 
 
 </resources>
